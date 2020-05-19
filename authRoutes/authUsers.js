@@ -12,6 +12,7 @@ const route = express.Router();
 // admin ----   username: testing, password: testing
 
 // POST /api/auth/register
+// comment here
 route.post("/register", (req, res) => {
   const user = req.body;
 
