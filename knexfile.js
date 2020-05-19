@@ -3,11 +3,8 @@ require("dotenv");
 
 module.exports = {
   development: {
-    client: "sqlite3",
-    useNullAsDefault: true,
-    connection: {
-      filename: "./data/authUsers.db3",
-    },
+    client: "pg",
+    connection: "postgres://localhost/authusers",
     migrations: {
       directory: "./data/migrations",
     },
