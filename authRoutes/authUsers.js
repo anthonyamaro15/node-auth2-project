@@ -8,6 +8,9 @@ const secret = process.env.SECRET || "thisismysecret";
 
 const route = express.Router();
 
+// user ----   username: lopez, password: lopez
+// admin ----   username: testing, password: testing
+
 // POST /api/auth/register
 route.post("/register", (req, res) => {
   const user = req.body;
