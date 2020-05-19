@@ -6,11 +6,11 @@ module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (authorization) {
-    jwt.verify(authorization, secret, (error, decotedToken) => {
+    jwt.verify(authorization, secret, (error, decodedToken) => {
       if (error) {
         res.status(401).json({ errorMessage: "Not allow" });
       } else {
-        req.decotedToken = decotedToken;
+        req.decodedToken = decodedToken;
         next();
       }
     });

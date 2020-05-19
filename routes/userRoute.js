@@ -5,7 +5,9 @@ const route = express.Router();
 
 // GET /api/users
 route.get("/", (req, res) => {
-  User.find()
+  const { department } = req.decodedToken;
+
+  User.findByDepartment(department)
     .then((users) => {
       res.status(200).json(users);
     })

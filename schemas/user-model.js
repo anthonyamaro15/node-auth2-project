@@ -11,8 +11,13 @@ function add(user) {
 function findBy(filter) {
   return db("auth_user").where(filter);
 }
+
+function findByDepartment(department) {
+  return db("auth_user as au").where("au.department", department);
+}
 module.exports = {
   find,
   findBy,
+  findByDepartment,
   add,
 };
